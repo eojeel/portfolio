@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const terminal = document.getElementById("terminal");
-    const terminalHeader = document.querySelector(".terminal-header");
-    const terminalBody = document.getElementById("terminal-body");
-    const minimizeButton = document.getElementById("terminal-minimize");
-    const maximizeButton = document.getElementById("terminal-maximize");
-    const closeButton = document.getElementById("terminal-close");
-    const restartOverlay = document.getElementById("terminal-restart-overlay");
-    const restartButton = document.getElementById("terminal-restart-button");
-    const restoreButton = document.getElementById("terminal-restore-button");
+    const terminal: HTMLElement | null = document.getElementById("terminal");
+    const terminalHeader: HTMLElement | null = document.querySelector(".terminal-header");
+    const terminalBody: HTMLElement | null = document.getElementById("terminal-body");
+    const minimizeButton: HTMLElement | null = document.getElementById("terminal-minimize");
+    const maximizeButton: HTMLElement | null = document.getElementById("terminal-maximize");
+    const closeButton: HTMLElement | null = document.getElementById("terminal-close");
+    const restartOverlay: HTMLElement | null = document.getElementById("terminal-restart-overlay");
+    const restartButton: HTMLElement | null = document.getElementById("terminal-restart-button");
+    const restoreButton: HTMLElement | null = document.getElementById("terminal-restore-button");
+
+    if (!terminal || !terminalHeader || !terminalBody || !minimizeButton || !maximizeButton || !closeButton || !restartOverlay || !restartButton || !restoreButton) {
+        return;
+    }
+
 
     minimizeButton.addEventListener("click", (e) => {
         e.stopPropagation();

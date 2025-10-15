@@ -6,7 +6,7 @@
 
         <title>Portfolio</title>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.ts'])
     </head>
     <body class="antialiased">
         <div id="terminal" class="terminal-window">
