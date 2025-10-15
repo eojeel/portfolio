@@ -1,18 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
     const terminal: HTMLElement | null = document.getElementById("terminal");
-    const terminalHeader: HTMLElement | null = document.querySelector(".terminal-header");
-    const terminalBody: HTMLElement | null = document.getElementById("terminal-body");
-    const minimizeButton: HTMLElement | null = document.getElementById("terminal-minimize");
-    const maximizeButton: HTMLElement | null = document.getElementById("terminal-maximize");
-    const closeButton: HTMLElement | null = document.getElementById("terminal-close");
-    const restartOverlay: HTMLElement | null = document.getElementById("terminal-restart-overlay");
-    const restartButton: HTMLElement | null = document.getElementById("terminal-restart-button");
-    const restoreButton: HTMLElement | null = document.getElementById("terminal-restore-button");
+    const terminalHeader: HTMLElement | null =
+        document.querySelector(".terminal-header");
+    const terminalBody: HTMLElement | null =
+        document.getElementById("terminal-body");
+    const minimizeButton: HTMLElement | null =
+        document.getElementById("terminal-minimize");
+    const maximizeButton: HTMLElement | null =
+        document.getElementById("terminal-maximize");
+    const closeButton: HTMLElement | null =
+        document.getElementById("terminal-close");
+    const restartOverlay: HTMLElement | null = document.getElementById(
+        "terminal-restart-overlay",
+    );
+    const restartButton: HTMLElement | null = document.getElementById(
+        "terminal-restart-button",
+    );
+    const restoreButton: HTMLElement | null = document.getElementById(
+        "terminal-restore-button",
+    );
 
-    if (!terminal || !terminalHeader || !terminalBody || !minimizeButton || !maximizeButton || !closeButton || !restartOverlay || !restartButton || !restoreButton) {
+    if (
+        !terminal ||
+        !terminalHeader ||
+        !terminalBody ||
+        !minimizeButton ||
+        !maximizeButton ||
+        !closeButton ||
+        !restartOverlay ||
+        !restartButton ||
+        !restoreButton
+    ) {
         return;
     }
-
 
     minimizeButton.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -25,10 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         restoreButton.classList.remove("hidden");
 
-        terminal.addEventListener("transitionend", () => {
-            terminal.classList.remove("minimizing");
-            document.body.classList.remove("no-scroll");
-        }, { once: true });
+        terminal.addEventListener(
+            "transitionend",
+            () => {
+                terminal.classList.remove("minimizing");
+                document.body.classList.remove("no-scroll");
+            },
+            { once: true },
+        );
     });
 
     restoreButton.addEventListener("click", () => {
@@ -37,10 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
         terminal.classList.remove("minimized");
         restoreButton.classList.add("hidden");
 
-        terminal.addEventListener("transitionend", () => {
-            terminal.classList.remove("restoring");
-            document.body.classList.remove("no-scroll");
-        }, { once: true });
+        terminal.addEventListener(
+            "transitionend",
+            () => {
+                terminal.classList.remove("restoring");
+                document.body.classList.remove("no-scroll");
+            },
+            { once: true },
+        );
     });
 
     terminalHeader.addEventListener("click", () => {
@@ -50,10 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
             terminal.classList.remove("minimized");
             restoreButton.classList.add("hidden");
 
-            terminal.addEventListener("transitionend", () => {
-                terminal.classList.remove("restoring");
-                document.body.classList.remove("no-scroll");
-            }, { once: true });
+            terminal.addEventListener(
+                "transitionend",
+                () => {
+                    terminal.classList.remove("restoring");
+                    document.body.classList.remove("no-scroll");
+                },
+                { once: true },
+            );
         }
     });
 
