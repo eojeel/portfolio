@@ -7,15 +7,48 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementById("terminal-close");
     const restartOverlay = document.getElementById("terminal-restart-overlay");
     const restartButton = document.getElementById("terminal-restart-button");
+    const restoreButton = document.getElementById("terminal-restore-button");
 
     minimizeButton.addEventListener("click", (e) => {
         e.stopPropagation();
-        terminal.classList.toggle("minimized");
+        document.body.classList.add("no-scroll");
+        terminal.classList.add("minimizing");
+
+        requestAnimationFrame(() => {
+            terminal.classList.add("minimized");
+        });
+
+        restoreButton.classList.remove("hidden");
+
+        terminal.addEventListener("transitionend", () => {
+            terminal.classList.remove("minimizing");
+            document.body.classList.remove("no-scroll");
+        }, { once: true });
+    });
+
+    restoreButton.addEventListener("click", () => {
+        document.body.classList.add("no-scroll");
+        terminal.classList.add("restoring");
+        terminal.classList.remove("minimized");
+        restoreButton.classList.add("hidden");
+
+        terminal.addEventListener("transitionend", () => {
+            terminal.classList.remove("restoring");
+            document.body.classList.remove("no-scroll");
+        }, { once: true });
     });
 
     terminalHeader.addEventListener("click", () => {
         if (terminal.classList.contains("minimized")) {
+            document.body.classList.add("no-scroll");
+            terminal.classList.add("restoring");
             terminal.classList.remove("minimized");
+            restoreButton.classList.add("hidden");
+
+            terminal.addEventListener("transitionend", () => {
+                terminal.classList.remove("restoring");
+                document.body.classList.remove("no-scroll");
+            }, { once: true });
         }
     });
 
