@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/php",
+            "args": [
+                "/home/eojeel/Documents/Development/portfolio/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
