@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const restartButton: HTMLElement | null = document.getElementById(
         "terminal-restart-button",
-    );""
+    );
+    ("");
     const restoreButton: HTMLElement | null = document.getElementById(
         "terminal-restore-button",
     );
