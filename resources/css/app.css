@@ -75,6 +75,10 @@ body.no-scroll {
     height: 1rem;
     border-radius: 9999px;
     cursor: pointer;
+    transition: filter 0.2s;
+}
+.header-button:hover {
+    filter: brightness(0.9);
 }
 .header-button.red {
     background-color: #ef4444;

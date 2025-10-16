@@ -57,7 +57,7 @@
 
                     <h2>[ Contact ]</h2>
                     <p>
-                        You can reach me at <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+                        You can find me on <a href="https://x.com/joethemaster" target="_blank">Twitter</a> and <a href="https://linkedin.com/in/joethemaster" target="_blank">LinkedIn</a>.
                     </p>
                 </div>
             </div>
