@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Portfolio</title>
+        <title>JoeLee.io</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.ts'])
     </head>
@@ -31,33 +31,29 @@
 
                     <h2>[ About Me ]</h2>
                     <p>
-                        I am a passionate web developer with a love for creating clean, efficient, and user-friendly applications. I have experience in both front-end and back-end development, and I am always eager to learn new technologies.
-                    </p>
+
+                        Over {{ \Carbon\Carbon::create(2013)->age }} of experience developing a wide range of web applications leveraging various front-end and back-end technologies while constantly maintaining the full stack environment.</p>
 
                     <h2>[ Skills ]</h2>
                     <ul>
                         <li>PHP / Laravel</li>
-                        <li>JavaScript / TypeScript</li>
-                        <li>React / Vue.js</li>
-                        <li>Tailwind CSS</li>
-                        <li>MySQL / PostgreSQL</li>
+                        <li>JavaScript</li>
+                        <li>Vue.js</li>
+                        <li>CSS</li>
+                        <li>MySQL / SQLite</li>
+                        <li>Ansible / Cloud / Bare Metal</li>
                     </ul>
 
                     <h2>[ Projects ]</h2>
                     <div>
-                        <h3>Project 1</h3>
-                        <p>A brief description of the project.</p>
-                        <a href="#">View on GitHub</a>
-                    </div>
-                    <div>
-                        <h3>Project 2</h3>
-                        <p>A brief description of the project.</p>
-                        <a href="#">View on GitHub</a>
+                        <h3>Vintage VW Decoder</h3>
+                        <p>Volkswagen Type 2 M-Plate and VIN Decoder: Essential Identification Tool for VW Buses from (1970-1979), Detailing Production Codes, Equipment, Manufacturing Dates, Destination, Specifications, and Optional Extras</p>
+                        <a href="https://vintagevwdecoder.com/">Vintage VW Decoder</a>
                     </div>
 
                     <h2>[ Contact ]</h2>
                     <p>
-                        You can find me on <a href="https://x.com/joethemaster" target="_blank">Twitter</a> and <a href="https://linkedin.com/in/joethemaster" target="_blank">LinkedIn</a>.
+                        You can find me on <a href="https://x.com/eojeel" target="_blank">Twitter</a> and <a href="https://linkedin.com/in/eojeel" target="_blank">LinkedIn</a>.
                     </p>
                 </div>
             </div>
