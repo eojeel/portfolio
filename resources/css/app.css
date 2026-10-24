@@ -3,7 +3,6 @@ This is a plain CSS file that styles the semantic HTML.
 Updated for Tailwind CSS v4: use @import and @theme, avoid config() helper.
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 @import "tailwindcss";
 
 /* Theme tokens (Tailwind v4) */
@@ -21,6 +20,7 @@ Updated for Tailwind CSS v4: use @import and @theme, avoid config() helper.
 
 body {
     height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,6 +74,8 @@ body.no-scroll {
     width: 1rem;
     height: 1rem;
     border-radius: 9999px;
+    padding: 0;
+    border: none;
     cursor: pointer;
     transition: filter 0.2s;
 }
@@ -182,14 +184,14 @@ body.no-scroll {
 
 .content a {
     color: var(--color-p10k-git);
-    text-decoration: none;
-}
-
-.content a:hover {
     text-decoration: underline;
 }
 
-.content > div {
+.content a:hover {
+    text-decoration-thickness: 2px;
+}
+
+.content > article {
     margin-top: 1rem;
 }
 
@@ -260,7 +262,6 @@ body.terminal-fullscreen-open {
 }
 
 .terminal-window {
-    /* ... existing styles ... */
     transition:
         transform 0.5s cubic-bezier(0.5, 0, 1, 0.5),
         opacity 0.5s;
@@ -300,4 +301,21 @@ body.terminal-fullscreen-open {
 
 .terminal-restore-button:hover {
     filter: brightness(1.05);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-p10k-dir);
+    outline-offset: 2px;
+}
+
+.terminal-body:focus-visible {
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal-window,
+    .terminal-window.minimized,
+    .header-button {
+        transition: none;
+    }
 }

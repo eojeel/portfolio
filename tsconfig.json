@@ -3,7 +3,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -11,10 +11,9 @@
     "noEmit": true,
     "jsx": "preserve",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "resources/js/*"
+        "./resources/js/*"
       ]
     }
   },
