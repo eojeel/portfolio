@@ -20,7 +20,7 @@ This project uses the following key technologies and tools:
 
 To get started, you will need to have the following installed:
 
-*   PHP >= 8.4.0
+*   PHP >= 8.5.0
 *   Composer
 *   Node.js
 *   NPM
